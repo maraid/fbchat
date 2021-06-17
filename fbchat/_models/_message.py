@@ -134,10 +134,10 @@ class Message:
         Example:
             >>> message.react("😍")
         """
-        if reaction and reaction not in SENDABLE_REACTIONS:
-            raise ValueError(
-                "Invalid reaction! Please use one of: {}".format(SENDABLE_REACTIONS)
-            )
+        # if reaction and reaction not in SENDABLE_REACTIONS:
+        #     raise ValueError(
+        #         "Invalid reaction! Please use one of: {}".format(SENDABLE_REACTIONS)
+        #     )
 
         data = {
             "action": "ADD_REACTION" if reaction else "REMOVE_REACTION",
