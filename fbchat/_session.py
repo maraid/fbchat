@@ -312,6 +312,21 @@ class Session:
                 data=data,
                 allow_redirects=False,
                 cookies=login_cookies(_util.now()),
+                headers={
+                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36",
+                    "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+                    "accept-language": "en-HU,en;q=0.9,hu-HU;q=0.8,hu;q=0.7,en-US;q=0.6",
+                    "cache-control": "max-age=0",
+                    "origin": "https://www.messenger.com",
+                    "referer": "https://www.messenger.com/login/",
+                    "sec-ch-ua": '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"',
+                    "sec-ch-ua-mobile": "?0",
+                    "sec-fetch-dest": "document",
+                    "sec-fetch-mode": "navigate",
+                    "sec-fetch-site": "same-origin",
+                    "sec-fetch-user": "?1",
+                    "upgrade-insecure-requests": "1"
+                }
             )
         except requests.RequestException as e:
             _exception.handle_requests_error(e)
