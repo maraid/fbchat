@@ -31,14 +31,14 @@ def parse_server_js_define(html: str) -> Mapping[str, Any]:
 
     # Skip leading entry
     _, *define_splits = define_splits
-
+    
     rtn = []
     if not define_splits:
         raise _exception.ParseError("Could not find any ServerJSDefine", data=html)
     if len(define_splits) < 2:
         raise _exception.ParseError("Could not find enough ServerJSDefine", data=html)
-    if len(define_splits) > 2:
-        raise _exception.ParseError("Found too many ServerJSDefine", data=define_splits)
+    # if len(define_splits) > 2:
+    #     raise _exception.ParseError("Found too many ServerJSDefine", data=define_splits)
     # Parse entries (should be two)
     for entry in define_splits:
         try:
